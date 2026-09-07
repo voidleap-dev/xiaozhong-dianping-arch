@@ -65,7 +65,7 @@ graph TD
   - 密码轮换后旧密码立即失效
 ```
 
-**踩坑**：最初用 Astro 的 `define:vars` 把 Supabase 配置注入到 `<script>` 标签里。这等于把 key 写在 HTML 源码里，爬虫都能拿到。改为服务端代理后，前端代码里完全看不到 Supabase 地址。
+**设计原则**：前端代码中不出现任何 Supabase 地址或 Key，所有数据库操作经服务端代理层转发，密钥仅存在于 CF 环境变量中。
 
 ### 3. 图片存储：R2 + CDN
 
@@ -99,7 +99,6 @@ graph TD
 **edit_log 表结构**：
 - restaurant_id, field_name, old_value, new_value
 - submitted_at, status (pending/approved/rejected)
-- 不记录提交者身份（匿名提交，降低门槛）
 
 ### 5. 部署流水线
 
