@@ -197,4 +197,3 @@ Cloudflare 账户分析（Aug 13 – Today）：累计请求 35.03k、带宽 273
 
 ![Cloudflare 分析 · 35.03k 请求 / 3.9k 访问](docs/evidence/cloudflare-analytics.png)
 
-> 说明：访问次数（visits）为 Cloudflare 统计口径，非独立注册用户数。
